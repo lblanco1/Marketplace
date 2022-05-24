@@ -36,6 +36,22 @@
             "scripts": []
           },
           "configurations": {
+            "sit": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.sit.ts"
+                }
+              ]
+            },
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -71,11 +87,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "Marketplace:build:production"
-            },
             "development": {
               "browserTarget": "Marketplace:build:development"
+            },
+            "sit": {
+              "browserTarget": "Marketplace:build:sit"
+            },
+            "qa": {
+              "browserTarget": "Marketplace:build:qa"
             }
           },
           "defaultConfiguration": "development"
